@@ -39,6 +39,24 @@
             $resultMessage = 'Sorry, you lose. Try again!';
         }
     }
+
+    if (isset($_POST['nodeal'])) {
+        $playerNumber = generateRandomNumber();
+
+        if ($_POST['nodeal'] === "nodeal") {
+            $win = (($playerNumber < $number1 && $playerNumber < $number2) || ($playerNumber > $number1 && $playerNumber > $number2));
+            if ($win) {
+                $points = 10;
+                $resultMessage = 'Congratulations! You win!';
+            } else {
+                $points = -5;
+                $resultMessage = 'Sorry, you lose. Try again!';
+            }
+        } else {
+            $points = -2;
+            $resultMessage = 'Sorry, you lose. Try again!';
+        }
+    }
     ?>
 
     <h1>In-Between Game</h1>
@@ -48,6 +66,7 @@
     <p><?php echo $resultMessage; ?></p>
     <form method="post">
         <button type="submit" name="deal" value="deal">Deal</button>
+        <button type="submit" name="nodeal" value="nodeal">No Deal</button>
     </form>
 </body>
 
