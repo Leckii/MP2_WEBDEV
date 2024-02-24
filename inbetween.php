@@ -26,7 +26,7 @@
         $playerNumber = generateRandomNumber();
 
         if ($_POST['deal'] === "deal") {
-            $win = (($playerNumber > min($number1, $number2) && $playerNumber < max($number1, $number2)) || ($playerNumber < min($number1, $number2) && $playerNumber > max($number1, $number2)));
+            $win = ($playerNumber > $number1 && $playerNumber < $number2 || $playerNumber > $number2 && $playerNumber < $number1);
             if ($win) {
                 $points = 10;
                 $resultMessage = 'Congratulations! You win!';
@@ -44,7 +44,8 @@
     <h1>In-Between Game</h1>
 
     <p>Random Numbers: <?php echo $number1; ?> and <?php echo $number2; ?></p>
-
+    <p>Your number is: <?php echo $playerNumber; ?></p>
+    <p><?php echo $resultMessage; ?></p>
     <form method="post">
         <button type="submit" name="deal" value="deal">Deal</button>
     </form>
