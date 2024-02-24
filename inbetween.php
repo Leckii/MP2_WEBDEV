@@ -44,8 +44,9 @@
 
     <h1>In-Between Game</h1>
 
-    <p>Random Numbers: <?php echo "<input type='hidden' name='number1' value='$number1'>"; ?> and <?php echo "<input type='hidden' name='number2' value='$number2'>"; ?></p>
-    
+    <p>Random Numbers: <?php echo $number1; ?> and <?php echo $number2; ?></p>
+    <p>Your number is: <?php echo $playerNumber; ?></p>
+    <p><?php echo $resultMessage; ?></p>
     <form method="post">
         <button type="submit" name="deal" value="deal">Deal</button>
     </form>
