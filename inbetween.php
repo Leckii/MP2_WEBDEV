@@ -24,9 +24,9 @@
 
     if (isset($_POST['deal'])) {
         $playerNumber = generateRandomNumber();
-        
+
         if ($_POST['deal'] === "deal") {
-            $win = ($playerNumber > min($number1, $number2) && $playerNumber < max($number1, $number2));
+            $win = (($playerNumber > min($number1, $number2) && $playerNumber < max($number1, $number2)) || ($playerNumber < min($number1, $number2) && $playerNumber > max($number1, $number2)));
             if ($win) {
                 $points = 10;
                 $resultMessage = 'Congratulations! You win!';
