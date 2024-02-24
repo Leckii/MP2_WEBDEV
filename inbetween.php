@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In-Between Game</title>
+    <title>In-Between</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -12,7 +14,7 @@
     <?php
     function generateRandomNumber()
     {
-        return rand(1, 10); // You can adjust the range based on your preference
+        return rand(1, 13);
     }
 
     $number1 = generateRandomNumber();
@@ -22,10 +24,18 @@
 
     if (isset($_POST['deal'])) {
         $playerNumber = generateRandomNumber();
-
-        if ($playerNumber > $number1 && $playerNumber < $number2) {
-            $resultMessage = 'Congratulations! You win!';
+        
+        if ($_POST['deal'] === "deal") {
+            $win = ($playerNumber > min($number1, $number2) && $playerNumber < max($number1, $number2));
+            if ($win) {
+                $points = 10;
+                $resultMessage = 'Congratulations! You win!';
+            } else {
+                $points = -5;
+                $resultMessage = 'Sorry, you lose. Try again!';
+            }
         } else {
+            $points = -2;
             $resultMessage = 'Sorry, you lose. Try again!';
         }
     }
@@ -36,14 +46,8 @@
     <p>Random Numbers: <?php echo $number1; ?> and <?php echo $number2; ?></p>
 
     <form method="post">
-        <button type="submit" name="deal">Deal</button>
+        <button type="submit" name="deal" value="deal">Deal</button>
     </form>
-
-    <?php if ($playerNumber !== null) : ?>
-        <p>Your Number: <?php echo $playerNumber; ?></p>
-        <p><?php echo $resultMessage; ?></p>
-    <?php endif; ?>
-
 </body>
 
 </html>
