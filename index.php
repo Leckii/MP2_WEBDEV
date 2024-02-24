@@ -18,17 +18,35 @@
     $number1 = generateRandomNumber();
     $number2 = generateRandomNumber();
     $playerNumber = null;
-    $resultMessage = '';
+    
 
     if (isset($_POST['deal'])) {
         $playerNumber = generateRandomNumber();
 
-        if ($playerNumber > $number1 && $playerNumber < $number2) {
-            $resultMessage = 'Congratulations! You win!';
-        } else {
-            $resultMessage = 'Sorry, you lose. Try again!';
+        function calculatePoints($choice, $number1, $number2, $playernumber, $points) {
+            if ($choice === "deal") {
+                // Check if third card is between the first two
+                $win = ($playernumber > min($number1, $number2) && $playernumber < max($number1, $number2));
+                if ($win) {
+                    $points += 10; // Increase points for winning
+                    $resultMessage = 'Congratulations! You win!';
+                } else {
+                    $points -= 5; // Decrease points for losing
+                }
+            } else { // choice is "no deal"
+                $points -= 2; // Deduct points for choosing "no deal"
+                $resultMessage = 'Sorry, you lose. Try again!';
+            }
+            return $points;
         }
+    
+        // Initialize variables
+        $totalRounds = 10;
+        $points = 0;
+        $resultMessage = '';
+    
     }
+    
     ?>
 
     <h1>In-Between Game</h1>
