@@ -12,7 +12,7 @@
     <?php
     function generateRandomNumber()
     {
-        return rand(1, 10); // You can adjust the range based on your preference
+        return rand(1, 13); 
     }
 
     $number1 = generateRandomNumber();
