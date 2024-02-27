@@ -12,7 +12,7 @@
     session_start();
     echo "Points: " . $_SESSION['totalPoints'] . '<br>';
     echo '<br>';
-    echo "Rounds: " . $_SESSION['round'] . '<br>';
+    echo "Rounds: 10 " . '<br>';
     ?>
     <br>
         <button id="playAgainBtn">Play Again?</button>

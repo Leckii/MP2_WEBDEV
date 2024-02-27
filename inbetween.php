@@ -74,12 +74,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['higher'])) {
         $high = ($_SESSION['thisNumber3'] > $_SESSION['thisNumber1']) && ($_SESSION['thisNumber3'] > $_SESSION['thisNumber2']);
+        $jackpot = ($_SESSION['thisNumber1'] == $_SESSION['thisNumber2'] && $_SESSION['thisNumber1'] == $_SESSION['thisNumber3']);
+
         // Check if number3 is higher than number1 and number2
     
         if ($high) {
             $_SESSION['totalPoints'] += 10; // Add points to total
             $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
-        } else {
+        } 
+        elseif($jackpot){
+            $_SESSION['totalPoints'] += 20; 
+            $resultMessage = 'Congratulations! You win the Jackpot! Your number is ' . $_SESSION['thisNumber3'];
+        }else {
             $_SESSION['totalPoints'] -= 5; // Deduct points from total
             $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
             
@@ -89,12 +95,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
     } elseif (isset($_POST['lower'])) {
         $low = ($_SESSION['thisNumber3'] < $_SESSION['thisNumber1']) && ($_SESSION['thisNumber3'] < $_SESSION['thisNumber2']);
+        $jackpot = ($_SESSION['thisNumber1'] == $_SESSION['thisNumber2'] && $_SESSION['thisNumber1'] == $_SESSION['thisNumber3']);
         // Check if number3 is lower than number1 and number2
     
         if ($low) {
             $_SESSION['totalPoints'] += 10; // Add points to total
             $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
-        } else {
+        } elseif($jackpot){
+            $_SESSION['totalPoints'] += 20; 
+            $resultMessage = 'Congratulations! You win the Jackpot! Your number is ' . $_SESSION['thisNumber3'];
+        }
+        else {
             $_SESSION['totalPoints'] -= 5; // Deduct points from total
             $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
             
@@ -102,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $showNextRoundButton = true;
         }
     }
+    
     
 
     // Check if the "Next Round" button is clicked
