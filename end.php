@@ -10,9 +10,9 @@
 <body>
     <?php
     session_start();
-    echo $_SESSION['totalPoints'] . '<br>';
+    echo "Points: " . $_SESSION['totalPoints'] . '<br>';
     echo '<br>';
-    echo $_SESSION['round'] . '<br>';
+    echo "Rounds: " . $_SESSION['round'] . '<br>';
     ?>
 </body>
 
