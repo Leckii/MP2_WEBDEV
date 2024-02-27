@@ -12,7 +12,7 @@
 <body>
     <h1>IN-BETWEEN SIR</h1>
     <form action="inbetween.php" method="post">
-        <button class="btn btn-primary">PLAYY</button>
+        <button class="btn btn-primary" name="play" value="play">PLAY</button>
     </form>
 </body>
 
