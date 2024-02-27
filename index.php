@@ -14,6 +14,9 @@
     <form action="inbetween.php" method="post">
         <button class="wrapper" name="play" value="play">PLAY</button>
     </form>
+    <form action="howtoplay.php" method="post"></form>
+    <button class="wrapper" name="howtoplay" value="howtoplay">HOW TO PLAY</button>
+
 </body>
 
 </html>
