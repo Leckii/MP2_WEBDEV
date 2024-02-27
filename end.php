@@ -14,6 +14,14 @@
     echo '<br>';
     echo "Rounds: " . $_SESSION['round'] . '<br>';
     ?>
+    <br>
+        <button id="playAgainBtn">Play Again?</button>
+
+<script>
+    document.getElementById("playAgainBtn").addEventListener("click", function() {
+        window.location.href = "inbetween.php";
+    });
+</script>
 </body>
 
 </html>

@@ -72,6 +72,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $showNextRoundButton = true;
     }
 
+    if (isset($_POST['higher'])) {
+        $high = ($_SESSION['thisNumber3'] > $_SESSION['thisNumber1']) && ($_SESSION['thisNumber3'] > $_SESSION['thisNumber2']);
+        // Check if number3 is higher than number1 and number2
+    
+        if ($high) {
+            $_SESSION['totalPoints'] += 10; // Add points to total
+            $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
+        } else {
+            $_SESSION['totalPoints'] -= 5; // Deduct points from total
+            $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
+            
+            $showButtons = false;
+            $showNextRoundButton = true;
+        }
+        
+    } elseif (isset($_POST['lower'])) {
+        $low = ($_SESSION['thisNumber3'] < $_SESSION['thisNumber1']) && ($_SESSION['thisNumber3'] < $_SESSION['thisNumber2']);
+        // Check if number3 is lower than number1 and number2
+    
+        if ($low) {
+            $_SESSION['totalPoints'] += 10; // Add points to total
+            $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
+        } else {
+            $_SESSION['totalPoints'] -= 5; // Deduct points from total
+            $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
+            
+            $showButtons = false;
+            $showNextRoundButton = true;
+        }
+    }
+    
+
     // Check if the "Next Round" button is clicked
     if (isset($_POST['nextRound'])) {
         $number1 = generateRandomNumber(); // Generate new random numbers for the next round
@@ -107,12 +139,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post">
         <!-- Display "Deal", "No Deal", and "Next Round" buttons -->
         <?php if ($showButtons) : ?>
-            <button type="submit" name="deal" value="deal">Deal</button>
-            <button type="submit" name="nodeal" value="nodeal">No Deal</button>
+            <?php if ($_SESSION['thisNumber1'] == $_SESSION['thisNumber2']) : ?>
+                <button type="submit" name="higher" value="higher">Higher</button>
+                <button type="submit" name="lower" value="lower">Lower</button>
+            <?php else : ?>
+                <button type="submit" name="deal" value="deal">Deal</button>
+                <button type="submit" name="nodeal" value="nodeal">No Deal</button>
+            <?php endif; ?>
         <?php endif; ?>
 
         <?php if ($showNextRoundButton) : ?>
             <button type="submit" name="nextRound" value="nextRound">Next Round</button>
         <?php endif; ?>
+        <?php endif; ?>
     </form>
-<?php endif; ?>
