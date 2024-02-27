@@ -1,0 +1,108 @@
+body {
+    background-image: url('images/backgroundd.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    margin-top: auto; /* Push the container to the top */
+    margin-bottom: 20px; /* Add margin at the bottom of the container */
+}
+
+.card {
+    width: 200px;
+    text-align: center;
+    height: 254px;
+    background: rgb(255, 0, 179);
+    background: linear-gradient(137deg, rgb(255, 0, 179) 0%, rgba(0,212,255,1) 100%);
+    transition: 0.3s ease;
+    border-radius: 30px;
+    filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 0.5));
+    position: relative;
+    margin: 0 auto 20px; /* Add margin below the card */
+}
+
+.card::after {
+    content: '';
+    background-color: #181818;
+    position: absolute;
+    z-index: 1;
+    transition: 0.3s ease;
+    height: 98%;
+    width: 98%;
+    top: 1%;
+    left: 1%;
+    border-radius: 28px;
+}
+
+.card:hover {
+    filter: drop-shadow(0px 0px 30px rgba(209, 38, 197, 1));
+}
+
+.button-container {
+    margin-top: auto; /* Push the button container to the bottom */
+    margin-bottom: 20px; /* Add margin at the bottom of the button container */
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(251, 218, 7);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    background: rgb(250, 164, 4);
+    box-shadow: 0 0 30px 5px rgba(240, 65, 1, 0.815);
+}
+
+button:hover::before {
+    animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+button:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+}
