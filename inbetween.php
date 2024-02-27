@@ -20,7 +20,7 @@
     $number1 = generateRandomNumber();
     $number2 = generateRandomNumber();
     $playerNumber = null;
-    $resultMessage = '';
+    $resultMessage = "";
 
     if (isset($_POST['deal'])) {
         $playerNumber = generateRandomNumber();
