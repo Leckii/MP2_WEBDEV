@@ -154,9 +154,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!-- Display current round information -->
 <h1>In-Between Game</h1>
 <p>Round: <?php echo $_SESSION['round']; ?>/10</p>
-<p>Random Numbers: <?php echo $_SESSION['thisNumber1']; ?> and <?php echo $_SESSION['thisNumber2']; ?></p>
-<p><?php echo $resultMessage; ?></p>
-
+<div class="cards">
+    <div class="card">
+        <div class="card-info">
+            <div class="title">Number 1: </div>
+            <div class="hidden-number"><?php echo $_SESSION['thisNumber1']; ?></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-info">
+            <div class="title">Number 2: </div>
+            <div class="hidden-number"><?php echo $_SESSION['thisNumber2']; ?></div>
+        </div>
+        
+    </div>
+    
 <!-- Display buttons only if the round limit is not reached and buttons should be shown -->
 <?php if ($_SESSION['round'] <= 10) : ?>
     <form method="post">
