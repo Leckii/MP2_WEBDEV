@@ -13,12 +13,36 @@ body {
    text-align: center;
    
  }
+.card-info{
+    font-size: 16px;
+}
 
+.hidden-number{
+    font-size:18
+
+}
  .logo {
     height: 50%;
     width: 50%;
  }
+ .style-text{
+font-size: 44px;
 
+ }
+
+.style-resultmessage{
+
+    font-size:27.5px;
+    color: rgb(7, 248, 79);
+    margin-top: 20px;
+}
+ .buttons{
+    display:flex;
+    justify-content: center;
+    margin-top: 10px;
+
+
+ }
  button {
     display: inline-block;
     width: 150px;
@@ -30,7 +54,7 @@ body {
     transition: all 0.5s ease-in;
     z-index: 1;
     font-family: Pixel;
-    margin: 20px auto;
+    margin: 10px 20px ;
    }
    
    button::before,
@@ -71,6 +95,14 @@ body {
     font-size: 18px;
     transition: all 0.3s ease-in;
    }
+
+
+.cards{
+    display:flex;
+    justify-content: space-between;
+    padding-left: 30%;
+    padding-right: 30%;
+}
 
    .card {
       --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
