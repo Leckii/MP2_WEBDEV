@@ -34,10 +34,12 @@ font-size: 44px;
 
     font-size:27.5px;
     color: rgb(7, 248, 79);
+    margin-top: 20px;
 }
  .buttons{
     display:flex;
     justify-content: center;
+    margin-top: 10px;
 
 
  }
@@ -98,7 +100,8 @@ font-size: 44px;
 .cards{
     display:flex;
     justify-content: space-between;
-    padding-left: 32%;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
    .card {
@@ -110,7 +113,6 @@ font-size: 44px;
       overflow: visible;
       background: #f7ba2b;
       background: var(--background);
-      margin: 0 20px;
       position: relative;
       z-index: 1;
   }

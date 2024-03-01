@@ -160,13 +160,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="title">Number 1: </div>
             <div class="hidden-number"><?php echo $_SESSION['thisNumber1']; ?></div>
         </div>
-    </div>
+    </div> 
     <div class="card">
         <div class="card-info">
             <div class="title">Number 2: </div>
             <div class="hidden-number"><?php echo $_SESSION['thisNumber2']; ?></div>
         </div> 
     </div>
+</div>
     <p class="style-resultmessage"><?php echo $resultMessage; ?></p>
     
 <!-- Display buttons only if the round limit is not reached and buttons should be shown -->
