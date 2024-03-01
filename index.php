@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>IN-BETWEEN SIR</h1>
+    <h1 class="testfont">KNIGHTS OF THE IN-BETWEEN</h1>
     <form action="inbetween.php" method="post">
         <button class="wrapper" name="play" value="play">PLAY</button>
     </form>
