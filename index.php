@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1 class="testfont">KNIGHTS OF THE IN-BETWEEN</h1>
+    <img src="images/knight_logo.png" alt="knightlogo" class="logo">
     <form action="inbetween.php" method="post">
         <button class="wrapper" name="play" value="play">PLAY</button>
     </form>
