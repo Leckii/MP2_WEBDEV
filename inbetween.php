@@ -152,8 +152,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Display current round information -->
-<h1>In-Between Game</h1>
-<p>Round: <?php echo $_SESSION['round']; ?>/10</p>
+<h1>KNIGHTS OF THE IN-BETWEEN</h1>
+<p class="style-text">Round: <?php echo $_SESSION['round']; ?>/10</p>
 <div class="cards">
     <div class="card">
         <div class="card-info">
@@ -165,9 +165,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="card-info">
             <div class="title">Number 2: </div>
             <div class="hidden-number"><?php echo $_SESSION['thisNumber2']; ?></div>
-        </div>
-        
+        </div> 
     </div>
+    <p class="style-resultmessage"><?php echo $resultMessage; ?></p>
     
 <!-- Display buttons only if the round limit is not reached and buttons should be shown -->
 <?php if ($_SESSION['round'] <= 10) : ?>
@@ -175,11 +175,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- Display "Deal", "No Deal", and "Next Round" buttons -->
         <?php if ($showButtons) : ?>
             <?php if ($_SESSION['thisNumber1'] == $_SESSION['thisNumber2']) : ?>
+                <br><br><br><br>
+                <div class="buttons">
                 <button type="submit" name="higher" value="higher">Higher</button>
                 <button type="submit" name="lower" value="lower">Lower</button>
             <?php else : ?>
                 <button type="submit" name="deal" value="deal">Deal</button>
                 <button type="submit" name="nodeal" value="nodeal">No Deal</button>
+                </div>
             <?php endif; ?>
         <?php endif; ?>
 
