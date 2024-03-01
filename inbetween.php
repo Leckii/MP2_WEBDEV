@@ -152,18 +152,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!-- Display current round information -->
-<h1>KNIGHTS OF THE IN-BETWEEN</h1>
+<h1 class="style-header">KNIGHTS OF THE IN-BETWEEN</h1>
 <p class="style-text">Round: <?php echo $_SESSION['round']; ?>/10</p>
 <div class="cards">
     <div class="card">
         <div class="card-info">
-            <div class="title">Number 1: </div>
+            
             <div class="hidden-number"><?php echo $_SESSION['thisNumber1']; ?></div>
         </div>
     </div> 
     <div class="card">
         <div class="card-info">
-            <div class="title">Number 2: </div>
+            
             <div class="hidden-number"><?php echo $_SESSION['thisNumber2']; ?></div>
         </div> 
     </div>
