@@ -18,7 +18,7 @@ body {
 }
 
 .hidden-number{
-    font-size:18
+    font-size: 80px;
 
 }
  .logo {
@@ -35,6 +35,10 @@ font-size: 44px;
     font-size:27.5px;
     color: rgb(7, 248, 79);
     margin-top: 20px;
+}
+.style-header{
+    font-size:55px;
+
 }
  .buttons{
     display:flex;
@@ -54,6 +58,7 @@ font-size: 44px;
     transition: all 0.5s ease-in;
     z-index: 1;
     font-family: Pixel;
+    font-size: 22px;
     margin: 10px 20px ;
    }
    
