@@ -10,13 +10,15 @@
 </head>
 
 <body>
-    <img src="images/logo_knight.png" alt="knightlogo" class="logo">
-    <form action="inbetween.php" method="post">
+    <br><br><br>
+    <img src="images/final_logo.png" alt="knightlogo" class="logo">
+    <br><br>
+    <form action="inbetween.php" method="post" class="center">
         <button class="wrapper" name="play" value="play">PLAY</button>
     </form>
-    <form action="howtoplay.php" method="post"></form>
-    <button class="wrapper" name="howtoplay" value="howtoplay">HOW TO PLAY</button>
-
+    <form action="howtoplay.php" method="post" class="center">
+        <button class="wrapper" name="howtoplay" value="howtoplay">HOW TO PLAY</button>
+    </form>
 </body>
 
 </html>
