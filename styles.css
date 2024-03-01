@@ -1,11 +1,16 @@
 @font-face {
     font-family: Pixel;
     src: url(../MP2_WEBDEV/font/Perfect\ DOS\ VGA\ 437.ttf);
+    ;
 }
 
- body {
-    font-family: Pixel;
-   }
+body {
+   background-image: url("images/ingame.gif");
+   background-size: 107%;
+   background-repeat: no-repeat;
+   font-family: Pixel;
+   color: antiquewhite
+ }
 
  .logo {
     height: 50%;

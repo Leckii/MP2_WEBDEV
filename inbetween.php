@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knights of the In-Between</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body{
-    background-image: url('/images/ingame.gif');   
-        }
-
-    </style>
 </head>
 
 <body>
