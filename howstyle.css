@@ -1,23 +1,35 @@
 @font-face {
-  font-family: Pixel;
-  src: url(../MP2_WEBDEV/font/Perfect\ DOS\ VGA\ 437.ttf);
+    font-family: Pixel;
+    src: url(../MP2_WEBDEV/font/Perfect\ DOS\ VGA\ 437.ttf);
+  }
+
+body {
+    background-image: url("images/howbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Pixel;
 }
 
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 29%;
-  }
-
-  body {
-    background-image: url("images/gifbg.gif");
-    background-repeat: no-repeat;
-    background-size: 105%;
+h1 {
     font-family: Pixel;
-  }
+    text-align: center;
+    color: gold;
+}
 
-  button {
+p {
+    font-family: Pixel;
+    color: gold;
+}
+
+.container {
+    background-color: black;
+    opacity: 100%;
+    border-style: dashed;
+    border-color: aliceblue;
+    padding: 20px;
+}
+
+button {
     display: inline-block;
     width: 150px;
     height: 50px;

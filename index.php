@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <br><br>
+    <br>
     <img src="images/final_logo.png" alt="knightlogo" class="logo">
     <br><br>
     <form action="inbetween.php" method="post" class="center">
