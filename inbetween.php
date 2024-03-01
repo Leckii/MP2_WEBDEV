@@ -61,10 +61,10 @@
 
             if ($win) {
                 $_SESSION['totalPoints'] += 10; // Add points to total
-                $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Well met, friend! Your number is " . $_SESSION['thisNumber3'] . ", a mark of fortune's grace. ";
             } else {
                 $_SESSION['totalPoints'] -= 5; // Deduct points from total
-                $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Apologies, dear friend. Your number is " . $_SESSION['thisNumber3'] . ", eludes the realm of luck.";
             }
             // Hide buttons after making a choice
             $showButtons = false;
@@ -76,7 +76,7 @@
         if (isset($_POST['nodeal'])) {
             $_SESSION['totalPoints'] -= 2; // Deduct points from total
             // Update game result
-            $resultMessage = 'No Deal! Your number is ' . $_SESSION['thisNumber3'];
+            $resultMessage = 'Declined! Your number is ' . $_SESSION['thisNumber3'] . ", unmoved by fate's sway!";
             // Hide buttons after making a choice
             $showButtons = false;
             // Show "Next Round" button after making a choice
@@ -91,13 +91,13 @@
 
             if ($high) {
                 $_SESSION['totalPoints'] += 10; // Add points to total
-                $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Well met, friend! Your number is " . $_SESSION['thisNumber3'] . ", a mark of fortune's grace. ";
             } elseif ($jackpot) {
                 $_SESSION['totalPoints'] += 25;
-                $resultMessage = 'Congratulations! You win the Jackpot! Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Joyous tidings! The jackpot is yours! Your number is " . $_SESSION['thisNumber3'] . " shines with victory!";
             } else {
                 $_SESSION['totalPoints'] -= 5; // Deduct points from total
-                $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Apologies, dear friend. Your number is " . $_SESSION['thisNumber3'] . ", eludes the realm of luck.";
 
                 $showButtons = false;
                 $showNextRoundButton = true;
@@ -109,13 +109,13 @@
 
             if ($low) {
                 $_SESSION['totalPoints'] += 10; // Add points to total
-                $resultMessage = 'Congratulations! You win! Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Well met, friend! Your number is " . $_SESSION['thisNumber3'] . ", a mark of fortune's grace. ";
             } elseif ($jackpot) {
                 $_SESSION['totalPoints'] += 20;
-                $resultMessage = 'Congratulations! You win the Jackpot! Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = $resultMessage = "Joyous tidings! The jackpot is yours! Your number is " . $_SESSION['thisNumber3'] . " shines with victory!";
             } else {
                 $_SESSION['totalPoints'] -= 5; // Deduct points from total
-                $resultMessage = 'Sorry, you lose. Your number is ' . $_SESSION['thisNumber3'];
+                $resultMessage = "Apologies, dear friend. Your number is " . $_SESSION['thisNumber3'] . ", eludes the realm of luck.";
 
                 $showButtons = false;
                 $showNextRoundButton = true;
