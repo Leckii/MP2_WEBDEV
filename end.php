@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="endstyles.css">
 
-    <title>Document</title>
+    <title>KNIGHTS OF THE IN-BETWEEN RESULT</title>
     
 </head>
 
@@ -16,7 +16,9 @@
             session_start();
         }
 
-        if ($_SESSION['totalPoints'] < 0) {
+        if ($_SESSION['totalPoints'] <= 0) {
+            echo '<h1 class="center">GAME OVER</h1>';
+        } elseif ($_SESSION['totalPoints'] < 20) {
             echo '<h1 class="center">GAME OVER</h1>';
         } else {
             echo '<h1 class="center">YOU WIN</h1>';
