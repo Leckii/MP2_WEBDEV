@@ -33,6 +33,7 @@
             and let the games begin! Onward, noble knights, to victory and glory!
         </p>
     </div>
+    <br><br>
     <form action="index.php" method="post" class="center">
         <button class="wrapper" name="play" value="play">BACK</button>
     </form>

@@ -25,8 +25,6 @@
         }
         
         echo '<p class="center">Points Earned: ' . $_SESSION['totalPoints'] . '</p>';
-
-    echo '<p class="center">Rounds: 10 </p>' . '<br>';
     ?>
     <br>
         <button id="playAgainBtn">Play Again?</button>
